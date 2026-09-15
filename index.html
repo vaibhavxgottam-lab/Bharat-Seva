@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bharat Seva — AI-powered unified government services platform. Submit complaints, track requests, and access all government services from one place.">
+  <meta name="keywords" content="government services, India, citizen services, complaints, AI, unified platform">
+  <meta name="theme-color" content="#0A0E1A">
+  <title>Bharat Seva — One Nation. One Platform.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-pattern"></div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand" data-nav="hero">
+        <div class="logo-icon">भ</div>
+        <h1>Bharat Seva</h1>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" class="active" data-nav="hero">Home</a>
+        <a href="#how-it-works" data-nav="how-it-works">How It Works</a>
+        <a href="#services" data-nav="services">Services</a>
+        <a href="#submit" data-nav="submit">Submit Request</a>
+        <a href="#track" data-nav="track">Track Status</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm" id="loginBtn" onclick="openAuthModal()">
+          🔐 Login
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="navigateTo('submit')">
+          File Request
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════ -->
+  <section class="section hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span>🤖</span>
+            <span>AI-Powered Government Services</span>
+          </div>
+
+          <h2 class="hero-title">
+            <span class="line">One Nation.</span>
+            <span class="line"><span class="highlight">One Platform.</span></span>
+          </h2>
+
+          <p class="hero-description">
+            Stop visiting multiple government websites. Describe your need or complaint in one place — 
+            our AI instantly routes it to the right department, submits it, and lets you track it from a single dashboard.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="navigateTo('submit')">
+              📝 Submit a Request
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="navigateTo('track')">
+              📊 Track Status
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="number" data-count="12">0</div>
+              <div class="label">Government Departments</div>
+            </div>
+            <div class="hero-stat">
+              <div class="number" data-count="50">0</div>
+              <div class="label">Service Categories</div>
+            </div>
+            <div class="hero-stat">
+              <div class="number" data-count="98">0</div>
+              <div class="label">% AI Accuracy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-floating-card behind-2"></div>
+            <div class="hero-floating-card behind-1"></div>
+            <div class="hero-floating-card main">
+              <div class="hero-card-header">
+                <span class="hero-card-title">Request #BS-2024-7891</span>
+                <span class="hero-card-badge">In Progress</span>
+              </div>
+
+              <div class="hero-card-dept">
+                <div class="dept-icon saffron">🏥</div>
+                <div class="dept-info">
+                  <h4>Health Department</h4>
+                  <p>Auto-routed by AI</p>
+                </div>
+              </div>
+
+              <div class="hero-card-dept">
+                <div class="dept-icon green">📋</div>
+                <div class="dept-info">
+                  <h4>Hospital sanitation complaint</h4>
+                  <p>District: Mumbai Suburban</p>
+                </div>
+              </div>
+
+              <div class="hero-card-progress">
+                <div class="progress-bar-bg">
+                  <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-label">
+                  <span>Processing</span>
+                  <span>72%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════════ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span>⚡</span>
+          <span>Simple Process</span>
+        </div>
+        <h2 class="section-title">
+          How <span class="gradient-text">Bharat Seva</span> Works
+        </h2>
+        <p class="section-subtitle">
+          From complaint to resolution in four simple steps — powered by AI, built for every citizen.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <div class="step-icon">✍️</div>
+          <h3 class="step-title">Describe Your Issue</h3>
+          <p class="step-desc">Write your complaint or request in plain language. No forms, no jargon — just tell us what you need.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <div class="step-icon">🤖</div>
+          <h3 class="step-title">AI Identifies Department</h3>
+          <p class="step-desc">Our AI analyzes your text and automatically identifies the correct government department to handle it.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <div class="step-icon">🚀</div>
+          <h3 class="step-title">Auto-Submit</h3>
+          <p class="step-desc">Your request is formatted and submitted to the right department through our interoperability layer.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-number">4</div>
+          <div class="step-icon">📊</div>
+          <h3 class="step-title">Track & Resolve</h3>
+          <p class="step-desc">Monitor every step of your request in real-time from your personal dashboard until it's resolved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERVICES DIRECTORY
+  ══════════════════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span>🏛️</span>
+          <span>Connected Departments</span>
+        </div>
+        <h2 class="section-title">
+          All Services, <span class="gradient-text">One Place</span>
+        </h2>
+        <p class="section-subtitle">
+          Access 12+ government departments through a unified interface. No more visiting separate portals.
+        </p>
+      </div>
+
+      <div class="search-container reveal">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="serviceSearch" 
+                 placeholder="Search services, departments, or categories..." 
+                 oninput="filterServices(this.value)">
+        </div>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SUBMIT REQUEST
+  ══════════════════════════════════════════ -->
+  <section class="section submit-section" id="submit">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span>📝</span>
+          <span>AI-Powered Routing</span>
+        </div>
+        <h2 class="section-title">
+          Submit Your <span class="gradient-text">Request</span>
+        </h2>
+        <p class="section-subtitle">
+          Just describe your issue. Our AI handles the rest — identifying the right department and routing it instantly.
+        </p>
+      </div>
+
+      <div class="submit-grid">
+        <div class="submit-form reveal" id="submitForm">
+          <div class="form-group">
+            <label class="form-label" for="citizenName">Full Name</label>
+            <input type="text" class="form-input" id="citizenName" placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="citizenState">State / Union Territory</label>
+            <select class="form-select" id="citizenState">
+              <option value="">Select your state</option>
+              <option value="andhra-pradesh">Andhra Pradesh</option>
+              <option value="bihar">Bihar</option>
+              <option value="delhi">Delhi</option>
+              <option value="goa">Goa</option>
+              <option value="gujarat">Gujarat</option>
+              <option value="karnataka">Karnataka</option>
+              <option value="kerala">Kerala</option>
+              <option value="madhya-pradesh">Madhya Pradesh</option>
+              <option value="maharashtra">Maharashtra</option>
+              <option value="punjab">Punjab</option>
+              <option value="rajasthan">Rajasthan</option>
+              <option value="tamil-nadu">Tamil Nadu</option>
+              <option value="telangana">Telangana</option>
+              <option value="uttar-pradesh">Uttar Pradesh</option>
+              <option value="west-bengal">West Bengal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="citizenDistrict">District</label>
+            <input type="text" class="form-input" id="citizenDistrict" placeholder="Enter your district">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="complaintText">Describe Your Issue or Request</label>
+            <textarea class="form-textarea" id="complaintText" 
+                      placeholder="Describe your complaint or service request in plain language. For example: 'The road near my house has large potholes causing accidents' or 'I need to apply for a new ration card'..."
+                      oninput="analyzeComplaint(this.value)"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="priorityLevel">Priority Level</label>
+            <select class="form-select" id="priorityLevel">
+              <option value="normal">Normal</option>
+              <option value="high">High — Urgent matter</option>
+              <option value="critical">Critical — Emergency / Safety risk</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="submitRequest()" id="submitBtn">
+            🚀 Submit Request
+          </button>
+        </div>
+
+        <!-- Success State (hidden by default) -->
+        <div id="submitSuccess" style="display:none;">
+          <div class="submit-form" style="text-align:center;">
+            <div class="success-check">
+              <span class="icon">✓</span>
+            </div>
+            <h3 style="font-family:var(--font-heading); font-size:var(--text-2xl); font-weight:700; margin-bottom:var(--space-md);">Request Submitted!</h3>
+            <p style="color:var(--text-secondary); margin-bottom:var(--space-lg);">Your complaint has been routed to the correct department.</p>
+            <div class="ai-result detected" style="text-align:left; margin-bottom:var(--space-lg);">
+              <div class="ai-result-label">Tracking ID</div>
+              <div class="ai-result-value" id="generatedTrackingId">BS-2024-XXXX</div>
+            </div>
+            <div style="display:flex; gap:var(--space-md);">
+              <button class="btn btn-primary" style="flex:1;" onclick="trackSubmittedRequest()">📊 Track Status</button>
+              <button class="btn btn-secondary" style="flex:1;" onclick="resetSubmitForm()">📝 New Request</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-detection-panel reveal" id="aiPanel">
+          <div class="ai-panel-header">
+            <div class="ai-icon">🤖</div>
+            <div>
+              <div class="ai-panel-title">AI Analysis</div>
+              <div class="ai-panel-subtitle">Real-time department detection</div>
+            </div>
+          </div>
+
+          <div id="aiResults">
+            <div class="ai-placeholder">
+              <div class="icon">🧠</div>
+              <p>Start describing your issue and the AI will automatically detect the relevant department</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TRACK STATUS
+  ══════════════════════════════════════════ -->
+  <section class="section track-section" id="track">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <span>📊</span>
+          <span>Real-Time Tracking</span>
+        </div>
+        <h2 class="section-title">
+          Track Your <span class="gradient-text">Request</span>
+        </h2>
+        <p class="section-subtitle">
+          Enter your tracking ID or view all your submitted requests in one unified dashboard.
+        </p>
+      </div>
+
+      <div class="track-search reveal">
+        <input type="text" class="track-input" id="trackInput" 
+               placeholder="Enter Tracking ID (e.g., BS-2024-7891)">
+        <button class="btn btn-primary" onclick="trackRequest()">Track</button>
+      </div>
+
+      <!-- Sample Requests History -->
+      <div class="history-list reveal" id="historyList">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Status Dashboard -->
+      <div class="status-dashboard" id="statusDashboard">
+        <div class="status-header-card">
+          <div class="status-header-top">
+            <span class="status-id" id="statusReqId">Request #BS-2024-7891</span>
+            <span class="status-badge processing" id="statusBadge">Processing</span>
+          </div>
+          <div class="status-meta" id="statusMeta">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <h3 style="font-family:var(--font-heading); font-weight:700; margin-bottom:var(--space-xl);">
+          Request Timeline
+        </h3>
+
+        <div class="timeline" id="statusTimeline">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-brand" data-nav="hero">
+            <div class="logo-icon">भ</div>
+            <h1>Bharat Seva</h1>
+          </a>
+          <p>An AI-powered unified platform connecting citizens with government services. One Nation. One Platform. Zero Hassle.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Health & Medical</a></li>
+            <li><a href="#services">Revenue & Tax</a></li>
+            <li><a href="#services">Education</a></li>
+            <li><a href="#services">Transport & Roads</a></li>
+            <li><a href="#services">Municipal Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#submit">Submit Request</a></li>
+            <li><a href="#track">Track Status</a></li>
+            <li><a href="#" onclick="openAuthModal(); return false;">Login / Register</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Bharat Seva. Government of India Initiative.</p>
+        <div class="footer-tricolor">
+          <span class="saffron"></span>
+          <span class="white"></span>
+          <span class="green"></span>
+        </div>
+        <p>Made with ❤️ for 1.4 Billion Citizens</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       AUTH MODAL
+  ══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeAuthModal()">✕</button>
+
+      <div class="modal-header">
+        <div class="modal-logo">भ</div>
+        <h3 class="modal-title">Welcome to Bharat Seva</h3>
+        <p class="modal-subtitle">Access all government services with one account</p>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchAuthTab('login')" id="tabLogin">Login</button>
+        <button class="modal-tab" onclick="switchAuthTab('register')" id="tabRegister">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email or Aadhaar Number</label>
+          <input type="text" class="form-input" id="loginEmail" placeholder="Enter email or 12-digit Aadhaar">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input type="password" class="form-input" id="loginPassword" placeholder="Enter your password">
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%;" onclick="handleLogin()">
+          Login
+        </button>
+
+        <div class="modal-divider">or continue with</div>
+
+        <button class="gov-login-btn" onclick="handleGovLogin('digilocker')">
+          <span class="icon">🔐</span>
+          <span>Login with DigiLocker</span>
+        </button>
+        <button class="gov-login-btn" onclick="handleGovLogin('aadhaar')">
+          <span class="icon">🪪</span>
+          <span>Login with Aadhaar</span>
+        </button>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" style="display:none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Name</label>
+          <input type="text" class="form-input" id="regName" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" class="form-input" id="regEmail" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPhone">Mobile Number</label>
+          <input type="tel" class="form-input" id="regPhone" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regAadhaar">Aadhaar Number (Optional)</label>
+          <input type="text" class="form-input" id="regAadhaar" placeholder="XXXX XXXX XXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Create Password</label>
+          <input type="password" class="form-input" id="regPassword" placeholder="Create a strong password">
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%;" onclick="handleRegister()">
+          Create Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
